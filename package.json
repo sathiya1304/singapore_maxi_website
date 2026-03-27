@@ -1,0 +1,40 @@
+{
+  "name": "star-runway",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev -p 3001",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "export": "next build && next export"
+  },
+  "dependencies": {
+    "@radix-ui/react-slot": "^1.1.1",
+    "@radix-ui/react-tabs": "^1.1.2",
+    "@shadcn/ui": "^0.0.4",
+    "axios": "^1.7.9",
+    "class-variance-authority": "^0.7.1",
+    "clsx": "^2.1.1",
+    "embla-carousel-autoplay": "^8.5.1",
+    "embla-carousel-react": "^8.5.1",
+    "framer-motion": "^12.0.3",
+    "lucide-react": "^0.469.0",
+    "next": "15.1.3",
+    "odometer": "^0.4.8",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "react-odometerjs": "^3.1.3",
+    "react-slick": "^0.30.3",
+    "slick-carousel": "^1.8.1",
+    "tailwind-merge": "^2.6.0",
+    "tailwindcss-animate": "^1.0.7"
+  },
+  "devDependencies": {
+    "@eslint/eslintrc": "^3",
+    "eslint": "^9",
+    "eslint-config-next": "15.1.3",
+    "postcss": "^8",
+    "tailwindcss": "^3.4.1"
+  }
+}
