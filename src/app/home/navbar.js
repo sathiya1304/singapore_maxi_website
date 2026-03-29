@@ -24,7 +24,7 @@ const Navbar = () => {
         <div className="max-w-7xl mx-auto px-4 flex justify-between items-center h-16">
           {/* Left: Logo */}
           <div className="flex items-center">
-            <img src="/images/SG LOGO.svg" alt="Logo" className="h-10" />
+            <img src="/images/SG Logo.svg" alt="Logo" className="h-10" />
           </div>
 
           {/* Center: Navigation */}
