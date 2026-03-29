@@ -7,6 +7,7 @@ export default function WhyChooseUs() {
       iconClass: "text-[#FFBF34]",
       highlightedText: "Reliable",
       text: "And Punctual",
+      description: "We guarantee on-time pickups every single trip. Your schedule is our priority, so you never have to worry about delays.",
     },
     {
       imgSrc: "/images/choose2.png",
@@ -15,6 +16,7 @@ export default function WhyChooseUs() {
       iconClass: "text-[#FFBF34]",
       highlightedText: "Comfortable",
       text: "Rides",
+      description: "Sit back and relax in our spacious, well-maintained maxi cabs designed to give you a smooth and enjoyable journey.",
     },
     {
       imgSrc: "/images/choose3.png",
@@ -23,6 +25,7 @@ export default function WhyChooseUs() {
       iconClass: "text-[#FFBF34]",
       highlightedText: "Experienced",
       text: "Drivers",
+      description: "Our professional drivers are trained, licensed, and local experts who know Singapore's roads inside and out.",
     },
     {
       imgSrc: "/images/choose4.png",
@@ -31,6 +34,7 @@ export default function WhyChooseUs() {
       iconClass: "text-[#FFBF34]",
       highlightedText: "Affordable",
       text: "Pricing",
+      description: "Get premium maxi cab service at competitive rates with no hidden charges. Transparent pricing for every ride.",
     },
     {
       imgSrc: "/images/choose5.png",
@@ -39,6 +43,7 @@ export default function WhyChooseUs() {
       iconClass: "text-[#FFBF34]",
       highlightedText: "24/7",
       text: "Availability",
+      description: "Whether it's an early morning flight or a late-night event, we are available round the clock to serve you.",
     },
     {
       imgSrc: "/images/choose6.png",
@@ -47,6 +52,7 @@ export default function WhyChooseUs() {
       iconClass: "text-[#FFBF34]",
       highlightedText: "Cross-Border",
       text: "Expertise",
+      description: "Seamless transfers to Malaysia and beyond. We handle all border formalities so your cross-border trip is stress-free.",
     },
     {
       imgSrc: "/images/choose7.png",
@@ -55,6 +61,7 @@ export default function WhyChooseUs() {
       iconClass: "text-[#FFBF34]",
       highlightedText: "Advanced",
       text: "Booking",
+      description: "Plan ahead with our easy advance booking system. Schedule your ride days in advance and travel with complete peace of mind.",
     },
   ];
 
@@ -83,7 +90,7 @@ export default function WhyChooseUs() {
                 </span>{" "}
                 {feature.text}
               </h3>
-              <p className="text-gray-600">Our cabs are always on time</p>
+              <p className="text-gray-600">{feature.description}</p>
             </div>
           ))}
         </div>
@@ -108,7 +115,7 @@ export default function WhyChooseUs() {
                 </span>{" "}
                 {feature.text}
               </h3>
-              <p className="text-gray-600">Our cabs are always on time</p>
+              <p className="text-gray-600">{feature.description}</p>
             </div>
           ))}
         </div>

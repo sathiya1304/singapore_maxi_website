@@ -227,18 +227,32 @@ export default function CarFleet() {
     getPageData();
   }, []);
 
+  const displayData = SectionOne.length > 0
+    ? SectionOne
+    : modelType.map((m) => ({
+        ContentBlockID: m.data_uniq_id,
+        BlockName: m.data_uniq_id,
+        BlockNames: m.model,
+        BlockImage: null,
+        BlockImagePath: null,
+        Title: 'Maxi Cab',
+        SubTitle: '',
+        Description: 'Available',
+        items_details: [],
+      }));
+
   // Carousel item scale calculation
   const getItemScale = (index) => {
     const diff = Math.abs(index - current);
     if (diff === 0) return "scale-100";
-    if (diff === 1 || diff === SectionOne.length - 1) return "scale-75";
+    if (diff === 1 || diff === displayData.length - 1) return "scale-75";
     return "scale-50";
   };
 
   // Handle Book Now click
   const handleBookNow = () => {
-    const blockName = SectionOne[current]?.BlockName || "";
-    const subTitle = SectionOne[current]?.SubTitle || "";
+    const blockName = displayData[current]?.BlockName || "";
+    const subTitle = displayData[current]?.SubTitle || "";
 
 
     updateModelId(blockName);
@@ -265,7 +279,7 @@ export default function CarFleet() {
   const [showData, setShowData] = useState([])
   const handleShowMore = () => {
     setIsPopupOpen(true);
-    setShowData(SectionOne[current]?.items_details)
+    setShowData(displayData[current]?.items_details)
   };
 
 
@@ -286,7 +300,7 @@ export default function CarFleet() {
           }}
         >
           <CarouselContent>
-            {SectionOne.map((car, index) => (
+            {displayData.map((car, index) => (
               <CarouselItem
                 key={car.ContentBlockID}
                 className={cn(
@@ -304,7 +318,7 @@ export default function CarFleet() {
                 >
                   <Card className="relative overflow-hidden border-none shadow-none">
                     <img
-                      src={`${API_ENDPOINT}${car.BlockImagePath ?? car.BlockImage}`}
+                      src={car.BlockImagePath || car.BlockImage ? `${API_ENDPOINT}${car.BlockImagePath ?? car.BlockImage}` : '/images/Car.svg'}
                       alt={car.BlockNames}
                       className="w-full h-auto object-cover"
                       style={{
@@ -322,7 +336,7 @@ export default function CarFleet() {
         <div className="mt-8 flex flex-col items-center space-y-4">
           <div className="flex items-center justify-between">
             <h3 className="text-2xl font-semibold">
-              {SectionOne[current]?.BlockNames || 'Vehicle Name'}
+              {displayData[current]?.BlockNames || 'Vehicle Name'}
             </h3>
             <div></div> {/* Empty div to keep the title centered */}
           </div>
@@ -344,27 +358,27 @@ export default function CarFleet() {
             {/* Luxury Set */}
             <div className="flex items-center gap-1">
               <img src="/images/luxury.svg" alt="Luxury" className="h-4 w-4" />
-              {SectionOne[current]?.Title || 'Luxury'}
+              {displayData[current]?.Title || 'Luxury'}
             </div>
 
             {/* Passengers Set */}
             <div className="flex items-center gap-1">
               <img src="/images/passengers.svg" alt="Passengers" className="h-4 w-4" />
-              {SectionOne[current]?.SubTitle || 0} Passengers
+              {displayData[current]?.SubTitle || 0} Passengers
             </div>
 
             {/* Availability Set */}
             <div className="flex items-center gap-1">
               <img
                 src={
-                  SectionOne[current]?.Description === 'Available'
+                  displayData[current]?.Description === 'Available'
                     ? '/images/status.svg'
                     : '/images/unavailble.svg'
                 }
                 alt="Available Status"
                 className="h-4 w-4"
               />
-              {SectionOne[current]?.Description === 'Available'
+              {displayData[current]?.Description === 'Available'
                 ? 'Available'
                 : 'Not Available'}
             </div>
@@ -427,7 +441,7 @@ export default function CarFleet() {
             <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50">
               <div className="bg-white p-8 rounded-lg max-w-md w-full">
                 <h4 className="text-md font-semibold capitalize">
-                  {SectionOne[current]?.Title}
+                  {displayData[current]?.Title}
                 </h4>
                 {showData?.map((data, index) => (
                   <div key={index}>
