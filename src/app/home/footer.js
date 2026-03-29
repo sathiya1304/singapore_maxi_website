@@ -88,16 +88,6 @@ export default function Footer() {
               </Link>
               <span className="text-white">All rights reserved.</span>
             </div>
-            <div className="flex  space-x-2 mt-4 md:mt-0">
-              <span className="text-white">Developed by</span>
-              <Link
-                href="https://hugeitsolutions.com/"
-                target="blank"
-                className="text-[#FFBF34]"
-              >
-                Huge IT Solutions
-              </Link>
-            </div>
             <div className="flex space-x-4 mt-4 md:mt-0">
             <span className="text-white">Reach Us On:</span>
               <Link
@@ -158,7 +148,7 @@ export default function Footer() {
           <img
             src="/images/whatsapp1.svg"
             alt="WhatsApp"
-            className="w-8 h-8"
+            className="w-11 h-11"
           />
         </a>
 
@@ -172,7 +162,7 @@ export default function Footer() {
           <img
             src="/images/s-viber.svg"
             alt="Viber"
-            className="w-10 h-10"
+            className="w-12 h-12"
           />
         </a>
 
@@ -187,7 +177,7 @@ export default function Footer() {
           <img
             src="/images/s-telegram.svg"
             alt="Telegram"
-            className="w-8 h-8"
+            className="w-11 h-11"
           />
         </a>
       </div>
@@ -204,7 +194,7 @@ export default function Footer() {
           <img
             src="/images/call.svg"
             alt="WhatsApp"
-            className="w-8 h-8"
+            className="w-11 h-11"
           />
         </a>
       </div>
